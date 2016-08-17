@@ -22,7 +22,7 @@ if ($oauth.access_token -ne $null) {
 
     $csvCon = ($myReport.Content | ConvertFrom-Json).value | ConvertTo-Csv -NoTypeInformation
     Write-Output $csvCon
-    $csvCon | Out-File -FilePath b2cUserJourneyEvents.csv -Force
+    $csvCon | Out-File -FilePath b2cUserJourneyEvents.csv -Encoding ASCII -Force
 } else {
     Write-Host "ERROR: No Access Token"
 }
